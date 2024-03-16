@@ -1,0 +1,65 @@
+:root{
+    --regular-padding:100px;
+    --special-color:rgb(0, 122, 237);
+}
+.special-heading{
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 100px; 
+}
+.special-heading p{
+    color: #777;
+}
+.int-book{
+    padding-top: var(--regular-padding);
+    padding-bottom: var(--regular-padding);
+}
+.int-book .heading{
+    width: 100%;
+    background: #eee;
+    padding: 15px 15px;
+    position: relative;
+    margin:50px 0
+}
+.int-book .heading::before{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 10px;
+    background: var(--special-color);
+    right: 0;
+    top: 0;
+}
+.int-book .content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+.int-book .content .box{
+  border: 2px solid var(--special-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+.int-book .content .box i{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--special-color);
+}
+.int-book .content .box h4{
+    text-align: center;
+}
+.int-book .content .box .btns{
+    display: flex;
+    justify-content: space-around;
+}
+.int-book .content .box .btns .show,
+.int-book .content .box .btns .dwn{
+    text-decoration: none;
+    color: white;
+    background: var(--special-color);
+    padding: 15px 25px;
+    text-align: center;
+    display: block;
+    border-radius: 5px;
+}

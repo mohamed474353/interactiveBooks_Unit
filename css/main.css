@@ -1,0 +1,805 @@
+:root{
+    --regular-padding:100px;
+    --special-color:rgb(0, 122, 237);
+}
+
+/* Start Global Rules */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    
+}
+
+.container {
+    width: 700px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Start Special Component */
+.special-heading h1 {
+   text-align: center;
+   line-height: 1.5;
+   margin-bottom: 100px; 
+}
+/* End Special Component */
+
+@media (max-width:450px) {
+    .container {
+        width: auto;
+
+    }
+}
+/* Small */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+
+    }
+}
+
+/* Medium */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+/* Start Header */
+header{
+    padding: 10px;
+    background: #eee;
+}
+header .logo{
+    text-decoration: none;
+    font-size: 19px;
+    color: black;
+    font-weight: bold;
+}
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (min-width:768px) {
+    header .container .links .menu {
+display: none;
+    }
+    header .container .links ul:first-of-type{
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    header .container .links ul:first-of-type li a{
+        padding: 11px 10px;
+        text-decoration: none;
+        color: #111;
+    }
+    header .container .links ul:first-of-type li a:hover{
+        background: #ddd;
+    }
+    .links{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    header .container .links ul li.spec{
+        position: relative;
+    }
+    header .container .links ul li.spec .dropdown{
+        position: absolute;
+        top: 27px;
+        right: 0px;
+        display: flex;
+        flex-direction: column;
+        min-width: 175px;
+        margin: 0;
+        padding: 0;
+        display: none;
+        z-index: 999;
+        background: #eeee;
+    }
+    header .container .links ul li.spec .dropdown::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 33px;
+        background: #ddd;
+        right: 0;
+        top: -28px;
+        visibility: hidden;
+
+    }
+    header .container .links ul li.spec:hover .dropdown{
+        display: block;
+    } 
+    header .container .links ul li.spec .dropdown a{
+       
+       display: block;
+       padding: 15px 5px ;
+       color: #111;
+        
+    }
+
+    .down-icon{
+        margin-right: 10px;
+    }
+    header .container .links ul.dropdown li:not(:last-child) a{
+        border-bottom: 0.5px solid #777;
+    }
+}
+@media (max-width:767px) {
+    .links{
+        position: relative;
+    }
+    header .container .links .menu{
+        color: #333;
+        font-size: 20px;
+    }
+    header .container .links ul{
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        min-width: 180px;
+        background: #eee;
+        left: -25px;
+        top: 30px;
+        height: fit-content;
+        display: none;
+        transition: 1s;
+        z-index: 4;
+    }
+    
+    header .container .links:hover ul{
+        display: block;
+    }
+    header .container .links ul a{
+        padding: 15px 15px;
+        text-decoration: none;
+        color: #000;
+        display: block;
+        transition: 0.3s;
+    }
+    header .container .links ul a:hover{
+        padding: 16px 16px;
+    }
+    header .container .links ul li:not(:last-child) a{
+        border-bottom: 1px solid #333;
+    }
+    header .container .links ul li.spec{
+        position: relative;
+    }
+    .down-icon{
+        margin-right: 10px;
+    }
+    header .container .links ul li.spec .dropdown{
+        position: absolute;
+        right: -183px;
+        top: 2px;
+        z-index: 0;
+        width: fit-content;
+        display: none;
+        transition: 0.3s ease-in;
+    
+    }
+    
+    header .container .links ul li.spec:hover .dropdown{
+        display: block;
+}
+}
+/* End Header */
+/* Start Header Two */
+.header-two{
+   background: #ddd;
+}
+.header-two .image{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-two .image img{
+    width: 60px;
+}
+.header-two .image img.spec{
+    width: 40px;
+}
+.header-two .image img.ib{
+    width: 50px;
+}
+
+/* End Header Two */
+/* Start Landing */
+.landing{
+    background-image: url('../images/intbook.jpg');
+    background-size: cover;
+    height: calc(100vh - 155px);
+    background-position: center;
+    opacity: 0.2;
+}
+/* End Landing */
+/* Start edutec */
+.edutec{
+    padding-top: var(--regular-padding);
+    padding-bottom: var(--regular-padding);
+    background: #f6f6f6;
+}
+.edutec .container .boxes{
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+.edutec .container .box{
+  flex-basis: 24%;
+}
+@media (max-width:767px) {
+    .edutec .container .box{
+        flex-basis: 100%;
+    }
+}
+@media (min-width:768px) and (max-width:1200px) {
+    .edutec .container .box{
+        flex-basis: 48%;
+    } 
+}
+.edutec .container .box img{
+    width: 100%;
+    border-radius: 10px;
+}
+.edutec .container .box h3{
+    font-size: 20px;
+    text-align: center;
+}
+.edutec .container .box .buttons .view{
+    text-decoration: none;
+    color: white;
+    background: var(--special-color);
+    padding: 15px 25px;
+    text-align: center;
+    display: block;
+    border-radius: 5px;
+}
+.edutec .container .box .s-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.edutec .container .box .s-buttons .view-1,
+.edutec .container .box .s-buttons .view-2{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    background: var(--special-color);
+    padding: 15px 25px;
+    text-align: center;
+    display: block;
+    border-radius: 5px;
+    flex-basis: 49%;
+}
+/* End edutec */
+/* Start Medieatec */
+.mediea-tec{
+    padding-top: var(--regular-padding);
+    padding-bottom: var(--regular-padding); 
+}
+
+.mediea-tec .container .boxes{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+  .mediea-tec .container .box{
+    flex-basis: 24%;
+  }
+  @media (max-width:767px) {
+    .mediea-tec .container .box{
+        flex-basis: 100%;
+    }
+}
+@media (min-width:768px) and (max-width:1200px) {
+    .mediea-tec .container .box{
+        flex-basis: 48%;
+    } 
+}
+  .mediea-tec .container .box img{
+      width: 100%;
+      border-radius: 10px;
+  }
+  .mediea-tec .container .box h3{
+      font-size: 20px;
+      text-align: center;
+  }
+  .mediea-tec .container .box .buttons .view{
+      text-decoration: none;
+      color: white;
+      background: var(--special-color);
+      padding: 15px 25px;
+      text-align: center;
+      display: block;
+      border-radius: 5px;
+  }
+  .mediea-tec .container .box .s-buttons{
+      display: flex;
+      justify-content: space-around;
+  }
+  .mediea-tec .container .box .s-buttons .view-1,
+  .mediea-tec .container .box .s-buttons .view-2{
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      background: var(--special-color);
+      padding: 15px 25px;
+      text-align: center;
+      display: block;
+      border-radius: 5px;
+      flex-basis: 49%;
+  }
+/* end Medieatec */
+/* Start Music Department */
+.music-tec{
+    padding-top: var(--regular-padding);
+    padding-bottom: var(--regular-padding); 
+    background: #f6f6f6;
+}
+
+.music-tec .container .boxes{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+  .music-tec .container .box{
+    flex-basis: 24%;
+  }
+  @media (max-width:767px) {
+    .music-tec .container .box{
+        flex-basis: 100%;
+    }
+}
+@media (min-width:768px) and (max-width:1200px) {
+    .music-tec .container .box{
+        flex-basis: 48%;
+    } 
+}
+  .music-tec .container .box img{
+      width: 100%;
+      border-radius: 10px;
+  }
+  .music-tec .container .box h3{
+      font-size: 20px;
+      text-align: center;
+  }
+  .music-tec .container .box .buttons .view{
+      text-decoration: none;
+      color: white;
+      background: var(--special-color);
+      padding: 15px 25px;
+      text-align: center;
+      display: block;
+      border-radius: 5px;
+  }
+
+/* End Music Department */
+/* Start Art Department */
+.art-tec{
+    padding-top: var(--regular-padding);
+    padding-bottom: var(--regular-padding);
+}
+.art-tec .container .boxes{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+  .art-tec .container .box{
+    flex-basis: 24%;
+  }
+  @media (max-width:767px) {
+    .art-tec .container .box{
+        flex-basis: 100%;
+    }
+}
+@media (min-width:768px) and (max-width:1200px) {
+    .art-tec .container .box{
+        flex-basis: 48%;
+    } 
+}
+  .art-tec .container .box img{
+      width: 100%;
+      border-radius: 10px;
+  }
+  .art-tec .container .box h3{
+      font-size: 20px;
+      text-align: center;
+  }
+  .art-tec .container .box .buttons .view{
+      text-decoration: none;
+      color: white;
+      background: var(--special-color);
+      padding: 15px 25px;
+      text-align: center;
+      display: block;
+      border-radius: 5px;
+  }
+
+/* End Art Department */
+/* Start Home Econimics Department */
+.hom-tec{
+    padding-top: var(--regular-padding);
+    padding-bottom: var(--regular-padding); 
+    background: #f6f6f6;   
+}
+.hom-tec .container .boxes{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+  .hom-tec .container .box{
+    flex-basis: 24%;
+    
+  }
+  @media (max-width:767px) {
+    .hom-tec .container .box{
+        flex-basis: 100%;
+    }
+}
+@media (min-width:768px) and (max-width:1200px) {
+    .hom-tec .container .box{
+        flex-basis: 48%;
+    } 
+}
+  .hom-tec .container .box img{
+      width: 100%;
+      border-radius: 10px;
+  }
+  .hom-tec .container .box h3{
+      font-size: 20px;
+      text-align: center;
+  }
+  .hom-tec .container .box .buttons .view{
+      text-decoration: none;
+      color: white;
+      background: var(--special-color);
+      padding: 15px 25px;
+      text-align: center;
+      display: block;
+      border-radius: 5px;
+  }
+/* End Home Econimics Department */
+/* Start Psychological and educational sciences Depatmaent */
+.psyg-tec{
+    padding-top: var(--regular-padding);
+    padding-bottom: var(--regular-padding); 
+}
+.psyg-tec .container .boxes{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+  .psyg-tec .container .box{
+    flex-basis: 24%;
+    border-radius: 20px;
+  }
+  @media (max-width:767px) {
+    .psyg-tec .container .box{
+        flex-basis: 100%;
+    }
+}
+@media (min-width:768px) and (max-width:1200px) {
+    .psyg-tec .container .box{
+        flex-basis: 48%;
+    } 
+}
+  .psyg-tec .container .box img{
+      width: 100%;
+      border-radius: 10px;
+  }
+  .psyg-tec .container .box h3{
+      font-size: 20px;
+      text-align: center;
+  }
+  .psyg-tec .container .box .buttons .view{
+      text-decoration: none;
+      color: white;
+      background: var(--special-color);
+      padding: 15px 25px;
+      text-align: center;
+      display: block;
+      border-radius: 5px;
+  }
+/* End Psychological and educational sciences Depatmaent */
+/* Start About Us */
+.about{
+    padding-top: var(--regular-padding);
+    padding-bottom: var(--regular-padding);  
+    background: #ebebeb;
+}
+.about .info{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+@media (min-width:768px) {
+    .about .info{
+        align-items: flex-start;
+    }   
+}
+@media (max-width:767px) {
+    .about .info{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .about .info .prep-team{
+        padding: 10px;
+        background: #fff;
+        border-radius: 20px;
+    }
+    .about .info .prep-team .member-1,
+    .about .info .prep-team .member-2{
+        flex-direction: column;
+       
+    }
+    .about .info .prep-team .member-1{
+        flex-direction: column;
+        
+    }
+    .about .info .prep-team .member-1 img,
+    .about .info .prep-team .member-2 img{
+      margin-left: 0 !important;
+      width: 100px !important;
+      height: 100px !important;
+}
+    .about .info .prep-team .member-1 .text,
+    .about .info .prep-team .member-2 .text{
+        text-align: center;
+    }
+    .about .info .sup{
+        padding: 10px;
+        background: #fff;
+        border-radius: 20px;  
+    }
+    .about .info .sup .supvis{
+        flex-direction: column;
+    }
+    .about .info .sup .supvis img{
+        margin-left: 0 !important;
+        width: 100px !important;
+        height: 100px !important;  
+    }
+    
+
+}
+
+
+
+
+.about .info .prep-team{
+    display: flex;
+    flex-direction: column;
+
+}
+.about .info .prep-team .member-1,
+.about .info .prep-team .member-2{
+    display: flex;  
+    align-items: center;    
+}
+.about .info .prep-team .member-1 img,
+.about .info .prep-team .member-2 img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-left: 40px;
+}
+.about .info .prep-team .member-1 .text,
+.about .info .prep-team .member-2 .text{
+    text-align: center;
+}
+
+.about .info .prep-team .member-1 .text h3,
+.about .info .prep-team .member-2 .text h3{
+   font-weight: normal;
+}
+.about .info .prep-team .member-1 P,
+.about .info .prep-team .member-2 P{
+    color: #777;
+}
+
+.about .info .sup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    flex-direction: column;
+
+}
+.about .info .sup .supvis{
+    display: flex;
+    align-items: center;
+}
+.about .info .sup img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-left: 40px;
+}
+.about .info .sup .text{
+    text-align: center;
+}
+.about .info .sup .text h3{
+    font-weight: normal;
+}
+.about .info .sup .text p{
+    color: #777;
+    line-height: 1.7;
+}
+/* End About Us */
+/* Start Faculty of Specs Education */
+.video{
+    position: relative;
+
+}
+.video::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,0.5);
+}
+.video video{
+    width: 100%;
+}
+.video .text{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width:100% ;
+    background: rgba(0, 119, 255, 0.1);
+   
+
+}
+@media (max-width:767px) {
+    .video .text{
+        top: 25%;
+    }
+    .video .text .more{
+        padding: 10px 20px !important;
+    }
+    .video .text h2{
+        font-weight: normal !important;
+    }
+}
+.video .text h2{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+}
+.video .text .more{
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    text-decoration: none;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    background: var(--special-color);
+}
+/* End Faculty of Specs Education */
+/* Start Mission and Vision */
+.mission{
+    padding-top: var(--regular-padding);
+    padding-bottom: var(--regular-padding);  
+    background: #ebebeb;
+    margin-bottom: -100px;
+}
+.mission .two-boxes{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    
+}
+.mission .two-boxes hr {
+  background: #000;
+  height: 0.9px;
+}
+.mission .two-boxes .message{
+    flex-basis: 25%;
+    background: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+.mission .two-boxes .message h3{
+text-align: center;
+}
+.mission .two-boxes .message p{
+    text-align: center;
+    color: #777;
+    line-height: 1.5;
+}
+.mission .two-boxes .vision{
+    flex-basis: 25%;
+    background: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
+.mission .two-boxes .vision h3{
+ text-align: center;
+}
+.mission .two-boxes .vision p{
+    color: #777;
+    text-align: center;
+    line-height: 1.5;
+}
+@media (max-width:992px){
+    .mission .two-boxes{
+        flex-direction: column;
+    }
+}
+/* End Mission and Vision */
+/* Start Footer */
+footer{
+   background: var(--special-color);
+   position: relative;
+   right: 0;
+   bottom: -100px;
+   width: 100%;
+}
+footer p{
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+    padding: 5px 4px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+}
+/* End Footer */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
